@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f4f6f5">
+    <title>ExamCraft</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="api.js" defer></script>
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <a class="skip-link" href="#app">Skip to content</a>
+    <header class="topbar">
+        <a class="brand" href="#/dashboard" aria-label="ExamCraft dashboard">ExamCraft</a>
+        <nav class="primary-nav" aria-label="Main navigation">
+            <a href="#/dashboard" data-nav="dashboard">Dashboard</a>
+            <a href="#/questions" data-nav="questions">Question Bank</a>
+            <a href="#/tests" data-nav="tests">Generate Test</a>
+        </nav>
+    </header>
+
+    <main id="app" class="main-content" tabindex="-1" aria-live="polite"></main>
+    <div id="feedback" class="feedback" role="status" aria-live="polite"></div>
+
+    <dialog id="question-dialog" class="dialog">
+        <div class="dialog-head">
+            <h2>Question details</h2>
+            <form method="dialog"><button class="button button-quiet" aria-label="Close details">Close</button></form>
+        </div>
+        <div id="question-details" class="dialog-body"></div>
+    </dialog>
+
+    <dialog id="confirm-dialog" class="dialog dialog-small">
+        <form method="dialog" id="confirm-form">
+            <h2 id="confirm-title">Confirm action</h2>
+            <p id="confirm-message" class="muted"></p>
+            <div class="button-row dialog-actions">
+                <button class="button button-secondary" value="cancel">Cancel</button>
+                <button id="confirm-action" class="button button-danger" value="confirm">Continue</button>
+            </div>
+        </form>
+    </dialog>
+</body>
+</html>
